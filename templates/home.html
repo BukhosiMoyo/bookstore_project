@@ -1,4 +1,6 @@
+
 {% extends "_base.html" %}
+{% load static %}
 
 {% block title %}
 Home
@@ -7,11 +9,13 @@ Home
 
 {% block content %}
 
-<h1>Homepage it going down</h1>
+<h1>Homepage it's going down</h1>
+<img class="bookcover" src="{% static 'images/book_cover.jpg' %}" alt="The Ws.vincent book cover" />
+
 
     {% if user.is_authenticated %}
 
-    Hi {{user.email}}, You are logged in
+    <p>Hi {{user.email}}, You are logged in</p>
     <p> <a href="{% url "logout" %}"> Logout</a> </p>
 
     {% else %}
